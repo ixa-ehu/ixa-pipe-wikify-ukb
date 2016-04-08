@@ -61,7 +61,7 @@ public class Annotate {
 
     public void wikificationToKAF(KAFDocument kaf, String scripts, String ukbExec, String ukbKb, String ukbDict, String wikiDb, Float threshold) throws Exception {
 
-	String sourceMarkable = ukbExec.substring(ukbExec.lastIndexOf("/") + 1);
+	String sourceMarkable = ukbExec.substring(ukbExec.lastIndexOf("/") + 1) + "_wikify";
 	String resourceExternalRef = ukbKb.substring(ukbKb.lastIndexOf("/") + 1);
 
 	String formsContext2Match = "";

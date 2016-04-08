@@ -291,7 +291,6 @@ sub match
 }
 
 
-###############################
 sub get_most_likely_BGlink
 {
     ## input: token

@@ -45,7 +45,7 @@ The contents of the module are the following:
 Installing the *ixa-pipe-wikify-ukb* requires the following steps:
 
 *If you already have installed in your machine the Java 1.7+ and MAVEN
-3, please go to [step 3](#3-download-and-install-UKB-and-its-resources)
+3, please go to [step 3](#3-download-and-install-ukb-and-its-resources)
 directly. Otherwise, follow the detailed steps*
 
 ### 1. Install JDK 1.7 or JDK 1.8

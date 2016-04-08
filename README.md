@@ -115,10 +115,10 @@ tar xzvf ukb_2.2.tgz
 ````
 
 If you are using a x86-64 Linux platform, you can use the already
-compiled *ukb_wsd* binary in *bin* folder. If not, follow the
-installation instructions in *src/INSTALL* file.
+compiled *ukb_wsd* binary in *ukb/bin* folder. If not, follow the
+installation instructions in *ukb/src/INSTALL* file.
 
-Download and compile a graph derived from Wikipedia.
+Download and create a graph derived from Wikipedia.
 For example, to get the Basque Wikipedia graph, first download the
 following source files and unpack them:
 
@@ -128,7 +128,7 @@ bunzip2 wikipedia_eu_2013.tar.bz2
 tar xvf wikipedia_eu_2013.tar
 ````
 
-Next, compile it following the installation instructions in *src/README* file.
+Next, create the Wikipedia graph following the compilation instructions in *ukb/src/README* file (section 1.2 Compiling the KB).
 
 
 ### 4. Download the SQLite database derived from Wikipedia

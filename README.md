@@ -107,22 +107,25 @@ You should see reference to the MAVEN version you have just installed plus the J
 
 ### 3. Download and install UKB and its resources
 
-Download [UKB](http://ixa2.si.ehu.es/ukb/):
+Download [UKB](http://ixa2.si.ehu.es/ukb/) and unpack it:
 
 ````shell
 wget http://ixa2.si.ehu.es/ukb/ukb_2.2.tgz
+tar xzvf ukb_2.2.tgz
 ````
 
 If you are using a x86-64 Linux platform, you can use the already
-compiled ukb_wsd binary in *bin* folder. If not, follow the
+compiled *ukb_wsd* binary in *bin* folder. If not, follow the
 installation instructions in *src/INSTALL* file.
 
 Download and compile a graph derived from Wikipedia.
 For example, to get the Basque Wikipedia graph, first download the
-following source files:
+following source files and unpack them:
 
 ````shell
 wget http://ixa2.si.ehu.es/ukb/graphs/wikipedia_eu_2013.tar.bz2
+bunzip2 wikipedia_eu_2013.tar.bz2
+tar xvf wikipedia_eu_2013.tar
 ````
 
 Next, compile it following the installation instructions in *src/README* file.
@@ -130,17 +133,12 @@ Next, compile it following the installation instructions in *src/README* file.
 
 ### 4. Download the SQLite database derived from Wikipedia
 
-Download the required SQLite database:
+Download and unpack the required SQLite database:
 
    - Basque wikipedia: 
 
 ````shell
 wget http://ixa2.si.ehu.es/ixa-pipes/models/2013Dec_wiki_eu.db.tgz
-````
-
-Untar the wikipedia resource:
-
-````shell
 tar xzvf 2013Dec_wiki_eu.db.tgz
 ````
 

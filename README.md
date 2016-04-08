@@ -45,7 +45,7 @@ The contents of the module are the following:
 Installing the *ixa-pipe-wikify-ukb* requires the following steps:
 
 *If you already have installed in your machine the Java 1.7+ and MAVEN
-3, please go to [step 3](#3-download-and-install-ukb-and-its-resources)
+3, please go to [step 4](#4-download-and-install-ukb-and-its-resources)
 directly. Otherwise, follow the detailed steps*
 
 ### 1. Install JDK 1.7 or JDK 1.8
@@ -105,7 +105,16 @@ mvn -version
 You should see reference to the MAVEN version you have just installed plus the JDK that is using.
 
 
-### 3. Download and install UKB and its resources
+
+### 3. Install Perl
+Install Perl and the required packages.
+For example, you might need to install the SQLite package as follows:
+````shell
+apt-get install libdbd-sqlite3-perl
+````
+
+
+### 4. Download and install UKB and its resources
 
 Download [UKB](http://ixa2.si.ehu.es/ukb/) and unpack it:
 
@@ -199,9 +208,8 @@ cat text.txt | ixa-pipe-tok | ixa-pipe-pos | ixa-pipe-nerc | java -jar ixa-pipe-
 
 When the language is other than English, the module offers an
 additional feature. It is possible to set the corresponding English
-entry also. To use this option, specify the *CrossWikipediaIndex*
-parameter in the *config.properties* file.
-
+entry also. To use this option, first get the database created by
+[MapDB](http://www.mapdb.org/) which has the crosslingual links.
 So far, you can download and untar the following package for Basque
 crosslingual links:
 
@@ -209,6 +217,8 @@ crosslingual links:
 wget http://ixa2.si.ehu.es/ixa-pipes/models/wikipedia-eu2en-db.tar.gz
 tar xzvf wikipedia-eu2en-db.tar.gz
 ````
+
+Then, specify the *CrossWikipediaIndex* parameter in the *config.properties* file.
 
 
 For more options running *ixa-pipe-wikify-ukb*:

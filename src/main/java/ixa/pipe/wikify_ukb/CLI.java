@@ -129,27 +129,36 @@ public class CLI {
 	    if(ukbExec == null || ukbExec.equals("")){
 		throw new Exception("\"UKBExecutable\" must be specified in the configuration file");
 	    }
+	    else if(! new File(ukbExec).exists()) {
+		throw new Exception("The following executable file specified by \"UKBExecutable\" not found: " + ukbExec);
+	    }
 	    String ukbKb = prop.getProperty("UKBKnowledgeBaseBin");
 	    if(ukbKb == null || ukbKb.equals("")){
 		throw new Exception("\"UKBKnowledgeBaseBin\" must be specified in the configuration file");
+	    }
+	    else if(! new File(ukbKb).exists()) {
+		throw new Exception("The following binary file specified by \"UKBKnowledgeBaseBin\" not found: " + ukbKb);
 	    }
 	    String ukbDict = prop.getProperty("UKBDictionary");
 	    if(ukbDict == null || ukbDict.equals("")){
 		throw new Exception("\"UKBDictionary\" must be specified in the configuration file");
 	    }
+	    else if(! new File(ukbDict).exists()) {
+		throw new Exception("The following dictionary specified by \"UKBDictionary\" not found: " + ukbDict);
+	    }
 	    String scripts = prop.getProperty("Scripts");
 	    if(scripts == null || scripts.equals("")){
 		throw new Exception("\"Scripts\" must be specified in the configuration file");
+	    }
+	    else if(! new File(scripts).exists()) {
+		throw new Exception("The follwoing folder specified by \"Scripts\" not found: " + scripts);
 	    }
 	    String wikiDb = prop.getProperty("WikipediaDb" + lang.substring(0,1).toUpperCase() + lang.substring(1));
 	    if(wikiDb == null || wikiDb.equals("")){
 		throw new Exception("\"WikipediaDb" + lang.substring(0,1).toUpperCase() + lang.substring(1) + "\" must be specified in the configuration file");
 	    }
-	    else{
-		File file = new File(wikiDb);
-		if (! file.exists()) {
-		    throw new Exception("Database " + wikiDb + " not found.");
-		}
+	    else if(! new File(wikiDb).exists()) {
+		throw new Exception("The follwoing database specified by \"WikipediaDb" + lang.substring(0,1).toUpperCase() + lang.substring(1) + "\" not found: " + wikiDb);
 	    }
 
 	    String crossWikiIndex = prop.getProperty("CrossWikipediaIndex" + lang.substring(0,1).toUpperCase() + lang.substring(1) + "En");

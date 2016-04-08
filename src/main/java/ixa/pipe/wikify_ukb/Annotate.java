@@ -48,10 +48,13 @@ public class Annotate {
     String resourceMapping;
 
 
-    public Annotate(String crosslinkMappingIndexFile, String language){
+    public Annotate(String crosslinkMappingIndexFile, String language) throws Exception{
 	this.language = language;
 	this.crosslinkMappingHashName = language + "En";
 	if((!language.equals("en")) && (crosslinkMappingIndexFile != null) && (!crosslinkMappingIndexFile.equals("none"))){
+	    if(! new File(crosslinkMappingIndexFile).exists()) {
+		throw new Exception("The following database specified by \"CrossWikipediaIndex\" not found: " + crosslinkMappingIndexFile);
+	    }
 	    crosslinkMappingIndex = new DictManager(crosslinkMappingIndexFile, this.crosslinkMappingHashName);
 	    this.cross = true;
 	    this.resourceMapping = crosslinkMappingIndexFile.substring(crosslinkMappingIndexFile.lastIndexOf("/") + 1);

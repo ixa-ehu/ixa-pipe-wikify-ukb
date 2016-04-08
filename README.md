@@ -140,7 +140,7 @@ tar xvf wikipedia_eu_2013.tar
 Next, create the Wikipedia graph following the compilation instructions in *ukb/src/README* file (section 1.2 Compiling the KB).
 
 
-### 4. Download the SQLite database derived from Wikipedia
+### 5. Download the SQLite database derived from Wikipedia
 
 Download and unpack the required SQLite database:
 
@@ -152,13 +152,13 @@ tar xzvf 2013Dec_wiki_eu.db.tgz
 ````
 
 
-### 5. Get module source code
+### 6. Get module source code
 
 ````shell
 git clone https://github.com/ixa-ehu/ixa-pipe-wikify-ukb
 ````
 
-### 6. Compile
+### 7. Compile
 
 ````shell
 cd ixa-pipe-wikify-ukb

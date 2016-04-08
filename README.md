@@ -45,7 +45,7 @@ The contents of the module are the following:
 Installing the *ixa-pipe-wikify-ukb* requires the following steps:
 
 *If you already have installed in your machine the Java 1.7+ and MAVEN
-3, please go to [step 3](#3-download-and-install-statistical-backend---dbpedia-spotlight)
+3, please go to [step 3](#3-download-and-install-UKB-and-its-resources)
 directly. Otherwise, follow the detailed steps*
 
 ### 1. Install JDK 1.7 or JDK 1.8
@@ -54,21 +54,21 @@ If you do not install JDK 1.7+ in a default location, you will probably
 need to configure the PATH in .bashrc or .bash_profile:
 
 ````shell
-    export JAVA_HOME=/yourpath/local/java17
-    export PATH=${JAVA_HOME}/bin:${PATH}
+export JAVA_HOME=/yourpath/local/java17
+export PATH=${JAVA_HOME}/bin:${PATH}
 ````
 
 If you use tcsh you will need to specify it in your .login as follows:
 
 ````shell
-    setenv JAVA_HOME /usr/java/java17
-    setenv PATH ${JAVA_HOME}/bin:${PATH}
+setenv JAVA_HOME /usr/java/java17
+setenv PATH ${JAVA_HOME}/bin:${PATH}
 ````
 
 If you re-login into your shell and run the command
 
 ````shell
-    java -version
+java -version
 ````
 
 you should now see that your JDK is 1.7 or 1.8.
@@ -79,25 +79,27 @@ you should now see that your JDK is 1.7 or 1.8.
 Download MAVEN 3 from
 
 ````shell
-    wget http://apache.rediris.es/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
+wget http://apache.rediris.es/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
 ````
 
 Now you need to configure the PATH. For Bash Shell:
 
-    export MAVEN_HOME=/yourpath/local/apache-maven-3.0.4
-    export PATH=${MAVEN_HOME}/bin:${PATH}
+````shell
+export MAVEN_HOME=/yourpath/local/apache-maven-3.0.4
+export PATH=${MAVEN_HOME}/bin:${PATH}
+````
 
 For tcsh shell:
 
 ````shell
-    setenv MAVEN3_HOME ~/local/apache-maven-3.0.4
-    setenv PATH ${MAVEN3}/bin:{PATH}
+setenv MAVEN3_HOME ~/local/apache-maven-3.0.4
+setenv PATH ${MAVEN3}/bin:{PATH}
 ````
 
 If you re-login into your shell and run the command
 
 ````shell
-    mvn -version
+mvn -version
 ````
 
 You should see reference to the MAVEN version you have just installed plus the JDK that is using.
@@ -108,7 +110,7 @@ You should see reference to the MAVEN version you have just installed plus the J
 Download [UKB](http://ixa2.si.ehu.es/ukb/):
 
 ````shell
-    wget http://ixa2.si.ehu.es/ukb/ukb_2.2.tgz
+wget http://ixa2.si.ehu.es/ukb/ukb_2.2.tgz
 ````
 
 If you are using a x86-64 Linux platform, you can use the already
@@ -120,7 +122,7 @@ For example, to get the Basque Wikipedia graph, first download the
 following source files:
 
 ````shell
-    wget http://ixa2.si.ehu.es/ukb/graphs/wikipedia_eu_2013.tar.bz2
+wget http://ixa2.si.ehu.es/ukb/graphs/wikipedia_eu_2013.tar.bz2
 ````
 
 Next, compile it following the installation instructions in *src/README* file.
@@ -133,27 +135,27 @@ Download the required SQLite database:
    - Basque wikipedia: 
 
 ````shell
-    wget http://ixa2.si.ehu.es/ixa-pipes/models/2013Dec_wiki_eu.db.tgz
+wget http://ixa2.si.ehu.es/ixa-pipes/models/2013Dec_wiki_eu.db.tgz
 ````
 
 Untar the wikipedia resource:
 
 ````shell
-    tar xzvf 2013Dec_wiki_eu.db.tgz
+tar xzvf 2013Dec_wiki_eu.db.tgz
 ````
 
 
 ### 5. Get module source code
 
 ````shell
-    git clone https://github.com/ixa-ehu/ixa-pipe-wikify-ukb
+git clone https://github.com/ixa-ehu/ixa-pipe-wikify-ukb
 ````
 
 ### 6. Compile
 
 ````shell
-    cd ixa-pipe-wikify-ukb
-    mvn clean package
+cd ixa-pipe-wikify-ukb
+mvn clean package
 ````
 
 This step will create a directory called 'target' which contains
@@ -161,7 +163,7 @@ various directories and files. Most importantly, there you will find
 the module executable:
 
 ````shell
-    ixa-pipe-wikify-ukb-${version}.jar
+ixa-pipe-wikify-ukb-${version}.jar
 ````
 
 This executable contains every dependency the module needs, so it is
@@ -188,7 +190,7 @@ There are several parameters:
 You can call to *ixa-pipe-wikify-ukb* module as follows:
 
 ````shell
-    cat text.txt | ixa-pipe-tok | ixa-pipe-pos | ixa-pipe-nerc | java -jar ixa-pipe-wikify-ukb-${version}.jar -c config.properties
+cat text.txt | ixa-pipe-tok | ixa-pipe-pos | ixa-pipe-nerc | java -jar ixa-pipe-wikify-ukb-${version}.jar -c config.properties
 ````
 
 or
@@ -206,15 +208,15 @@ So far, you can download and untar the following package for Basque
 crosslingual links:
 
 ````shell
-    wget http://ixa2.si.ehu.es/ixa-pipes/models/wikipedia-eu2en-db.tar.gz
-    tar xzvf wikipedia-eu2en-db.tar.gz
+wget http://ixa2.si.ehu.es/ixa-pipes/models/wikipedia-eu2en-db.tar.gz
+tar xzvf wikipedia-eu2en-db.tar.gz
 ````
 
 
 For more options running *ixa-pipe-wikify-ukb*:
 
 ````shell
-    java -jar ixa-pipe-wikify-ukb-${version}.jar -h
+java -jar ixa-pipe-wikify-ukb-${version}.jar -h
 ````
 
 

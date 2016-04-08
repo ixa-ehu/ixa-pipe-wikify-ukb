@@ -172,7 +172,7 @@ completely portable as long as you have a JVM 1.7 installed.
 
 The *ixa-pipe-wikify-ukb* requires a NAF document (with *wf*, *term*
 and *entity* elements) as standard input and outputs NAF through
-standard output. You can get the necessary input for *ixa-pipe-wikify*
+standard output. You can get the necessary input for *ixa-pipe-wikify-ukb*
 by piping *[ixa-pipe-tok](https://github.com/ixa-ehu/ixa-pipe-tok)*,
 *[ixa-pipe-pos](https://github.com/ixa-ehu/ixa-pipe-pos)* and
 *[ixa-pipe-nerc](https://github.com/ixa-ehu/ixa-pipe-nerc)* as shown
@@ -194,7 +194,7 @@ cat text.txt | ixa-pipe-tok | ixa-pipe-pos | ixa-pipe-nerc | java -jar ixa-pipe-
 or
 
 ````shell
-cat text.txt | ixa-pipe-tok | ixa-pipe-pos | ixa-pipe-wikify | java -jar ixa-pipe-wikifydomain-1.0.0.jar -c config.properties -t 0.5
+cat text.txt | ixa-pipe-tok | ixa-pipe-pos | ixa-pipe-nerc | java -jar ixa-pipe-wikify-ukb-${version}.jar -c config.properties -t 0.5
 ````
 
 When the language is other than English, the module offers an

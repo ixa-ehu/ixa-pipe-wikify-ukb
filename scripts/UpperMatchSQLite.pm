@@ -406,6 +406,7 @@ adigai
 al
 arabera
 ari
+arte
 artean
 b
 bai
@@ -445,6 +446,7 @@ gero
 gisa
 gure
 h
+har
 hartu
 hau
 hemen

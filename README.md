@@ -147,8 +147,8 @@ Download and unpack the required SQLite database:
    - Basque wikipedia: 
 
 ````shell
-wget http://ixa2.si.ehu.es/ixa-pipes/models/2013Dec_wiki_eu.db.tgz
-tar xzvf 2013Dec_wiki_eu.db.tgz
+wget http://ixa2.si.ehu.es/ixa-pipes/models/2016Apr_wiki_eu.db.tgz
+tar xzvf 2016Apr_wiki_eu.db.tgz
 ````
 
 

@@ -132,9 +132,9 @@ For example, to get the Basque Wikipedia graph, first download the
 following source files and unpack them:
 
 ````shell
-wget http://ixa2.si.ehu.es/ukb/graphs/wikipedia_eu_2013.tar.bz2
-bunzip2 wikipedia_eu_2013.tar.bz2
-tar xvf wikipedia_eu_2013.tar
+wget http://ixa2.si.ehu.es/ukb/graphs/wikipedia_eu_2016.tar.bz2
+bunzip2 wikipedia_eu_2016.tar.bz2
+tar xvf wikipedia_eu_2016.tar
 ````
 
 Next, create the Wikipedia graph following the compilation instructions in *ukb/src/README* file (section 1.2 Compiling the KB).

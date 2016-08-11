@@ -4,10 +4,10 @@
   <groupId>ixa</groupId>
   <artifactId>ixa-pipe-wikify-ukb</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>ixa-pipe-wikify-ukb</name>
-  <description>ixa-pipe-wikify-ukb is part of IXA-pipeline and performs
-    Wikification based on UKB.
+  <description>ixa-pipe-wikify-ukb is a multilingual Wikification
+  module based on UKB and developed by IXA NLP Group.
   </description>
   <developers>
     <developer>

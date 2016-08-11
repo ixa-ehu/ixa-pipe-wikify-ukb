@@ -14,7 +14,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with ixa-pipe-wikify.  If not, see <http://www.gnu.org/licenses/>.
+   along with ixa-pipe-wikify-ukb.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
@@ -102,7 +102,7 @@ public class Annotate {
 	String matchedContext = "";
 	String matchedContext2 = "";
 	String outputLineContext = "";
-	BufferedReader outputContextStream = new BufferedReader(new InputStreamReader(pMatch1.getInputStream()));
+	BufferedReader outputContextStream = new BufferedReader(new InputStreamReader(pMatch1.getInputStream(), "UTF-8"));
 	while((outputLineContext = outputContextStream.readLine()) != null){
 	    matchedContext += outputLineContext + "\n";
 	}
@@ -133,7 +133,7 @@ public class Annotate {
 	    Process pMerge = Runtime.getRuntime().exec(cmdMerge);
 	    
 	    String outputLineContext2 = "";
-	    BufferedReader outputContextStream2 = new BufferedReader(new InputStreamReader(pMerge.getInputStream()));
+	    BufferedReader outputContextStream2 = new BufferedReader(new InputStreamReader(pMerge.getInputStream(), "UTF-8"));
 	    while((outputLineContext2 = outputContextStream2.readLine()) != null){
 		matchedContext2 += outputLineContext2 + "\n";
 	    }
@@ -166,6 +166,7 @@ public class Annotate {
 	    ukbContext += contextWordOffset[0] + "##" + contextWordOffset[1] + "#1 ";
 	    contextSpots.put(contextWordOffset[1],contextWordOffset[0]);
 	}
+
 	
 	File contextTempFile = File.createTempFile("context", ".tmp");
 	contextTempFile.deleteOnExit();
@@ -186,7 +187,7 @@ public class Annotate {
 
 	String outputUkb = "";
 	String outputLineUkb = "";
-	BufferedReader outputUkbStream = new BufferedReader(new InputStreamReader(pUkb.getInputStream()));
+	BufferedReader outputUkbStream = new BufferedReader(new InputStreamReader(pUkb.getInputStream(), "UTF-8"));
 	while((outputLineUkb = outputUkbStream.readLine()) != null){
 	    outputUkb += outputLineUkb + "\n";
 	}
@@ -231,7 +232,7 @@ public class Annotate {
 	    stdinProb.close();
 
 	    String outputProb = "";
-	    BufferedReader outputProbStream = new BufferedReader(new InputStreamReader(pProb.getInputStream()));
+	    BufferedReader outputProbStream = new BufferedReader(new InputStreamReader(pProb.getInputStream(), "UTF-8"));
 	    outputProb = outputProbStream.readLine();
 	    outputProbStream.close();
 
@@ -344,7 +345,7 @@ public class Annotate {
 		    stdinMfs.close();
 
 		    String outputMfs = "";
-		    BufferedReader outputMfsStream = new BufferedReader(new InputStreamReader(pMfs.getInputStream()));
+		    BufferedReader outputMfsStream = new BufferedReader(new InputStreamReader(pMfs.getInputStream(), "UTF-8"));
 		    outputMfs = outputMfsStream.readLine();
 		    outputMfsStream.close();
 
@@ -368,7 +369,7 @@ public class Annotate {
 			String reference = outputMfs;
 			String confidence = "1";
 			reference = "http://" + language + ".wikipedia.org/wiki/" + reference;
-			ExternalRef externalRef = kaf.newExternalRef("MFS-Wikipedia2013",reference);
+			ExternalRef externalRef = kaf.newExternalRef("MFS_" + resourceExternalRef,reference);
 			externalRef.setConfidence(Float.parseFloat(confidence));
 			externalRef.setSource(language);
 			externalRef.setReftype(language);

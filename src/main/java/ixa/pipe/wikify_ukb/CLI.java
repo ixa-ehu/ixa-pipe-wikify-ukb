@@ -10,11 +10,11 @@
 
    ixa-pipe-wikify-ukb is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with ixa-pipe-wikify.  If not, see <http://www.gnu.org/licenses/>.
+   along with ixa-pipe-wikify-ukb. If not, see <http://www.gnu.org/licenses/>.
 
 */
 
@@ -68,9 +68,9 @@ public class CLI {
 
         // create Argument Parser
         ArgumentParser parser = ArgumentParsers.newArgumentParser(
-            "ixa-pipe-wikify-ukb-1.0.0.jar").description(
-            "ixa-pipe-wikify-ukb-1.0.0 is a multilingual Wikification module "
-                + "developed by IXA NLP Group based on UKB.\n");
+            "ixa-pipe-wikify-ukb-" + version + ".jar").description(
+            "ixa-pipe-wikify-ukb-" + version + " is a multilingual Wikification module "
+                + "based on UKB and developed by IXA NLP Group.\n");
 
 	parser
 	    .addArgument("-t", "--threshold")
@@ -95,7 +95,7 @@ public class CLI {
         } catch (ArgumentParserException e) {
 	    parser.handleError(e);
 	    System.out
-		.println("Run java -jar target/ixa-pipe-wikify-ukb-1.0.0.jar -help for details");
+		.println("Run java -jar target/ixa-pipe-wikify-ukb-" + version + ".jar -help for details");
 	    System.exit(1);
         }
 

@@ -1,10 +1,8 @@
 # ixa-pipe-wikify-ukb
 
 This repository contains the Wikification tool based on
-[UKB](http://ixa2.si.ehu.es/ukb/). *ixa-pipe-wikify-ukb* is part of
-IXA pipes, a [multilingual NLP
-pipeline](http://ixa2.si.ehu.es/ixa-pipes) developed by the [IXA NLP
-Group](http://ixa.si.ehu.es/Ixa).
+[UKB](http://ixa2.si.ehu.es/ukb/). *ixa-pipe-wikify-ukb* is developed
+by the [IXA NLP Group](http://ixa.si.ehu.es/Ixa).
 
 The *ixa-pipe-wikify-ukb* module takes a [NAF
 document](http://wordpress.let.vupr.nl/naf/) containing *wf*, *term*
@@ -214,8 +212,8 @@ So far, you can download and untar the following package for Basque
 crosslingual links:
 
 ````shell
-wget http://ixa2.si.ehu.es/ixa-pipes/models/wikipedia-eu2en-db.tar.gz
-tar xzvf wikipedia-eu2en-db.tar.gz
+wget http://ixa2.si.ehu.es/ixa-pipes/models/2016Apr_wiki_eu2en-db.tgz
+tar xzvf 2016Apr_wiki_eu2en-db.tgz
 ````
 
 Then, specify the *CrossWikipediaIndex* parameter in the *config.properties* file.
@@ -231,9 +229,9 @@ java -jar ixa-pipe-wikify-ukb-${version}.jar -h
 #### Contact information
 
     Arantxa Otegi
-    arantza.otegi@ehu.es
+    arantza.otegi@ehu.eus
     IXA NLP Group
-    University of the Basque Country (UPV/EHU)
+    University of the Basque Country UPV/EHU
     E-20018 Donostia-San Sebastián
 
 
